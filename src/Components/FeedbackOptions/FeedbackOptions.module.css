@@ -1,0 +1,14 @@
+.button {
+  text-transform: capitalize;
+  margin-left: 10px;
+  width: fit-content;
+  height: max-content;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px #00000033;
+}
+
+.button:hover {
+  background-color: rgba(107, 184, 247, 0.767);
+  color: #fff;
+  border: transparent;
+}

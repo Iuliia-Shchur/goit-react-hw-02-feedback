@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <div>
+    <div className={s.Wrapper}>
       {options.map((option) => (
         <button
+          className={s.button}
           type="button"
           key={option}
           onClick={onLeaveFeedback}
@@ -17,5 +18,10 @@ function FeedbackOptions({ options, onLeaveFeedback }) {
     </div>
   );
 }
+
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func,
+  option: PropTypes.array,
+};
 
 export default FeedbackOptions;
