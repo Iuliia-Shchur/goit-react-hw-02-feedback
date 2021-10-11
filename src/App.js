@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Children } from "react";
 import s from "./App.module.css";
@@ -6,7 +6,7 @@ import FeedbackOptions from "./Components/FeedbackOptions/FeedbackOptions";
 import Section from "./Components/Section/Section";
 import Statistics from "./Components/Statistics/Statistics";
 
-class App extends React.Component {
+class App extends Component {
   state = {
     good: 0,
     neutral: 0,
