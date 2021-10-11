@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Children } from "react";
-import "./App.css";
+import s from "./App.module.css";
 import FeedbackOptions from "./Components/FeedbackOptions/FeedbackOptions";
 import Section from "./Components/Section/Section";
 import Statistics from "./Components/Statistics/Statistics";
@@ -27,10 +27,9 @@ class App extends React.Component {
   };
 
   countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
     const totalFeedback = this.countTotalFeedback();
-    return totalFeedback
-      ? Math.round((this.state.good / totalFeedback) * 100)
-      : 0;
+    return totalFeedback ? Math.round((good / totalFeedback) * 100) : 0;
   };
 
   render() {
@@ -39,13 +38,14 @@ class App extends React.Component {
     const countTotalFeedback = this.countTotalFeedback();
     const countPositiveFeedbackPercentage =
       this.countPositiveFeedbackPercentage();
+    const { onLeaveFeedback } = this;
 
     return (
-      <div className="s.App">
+      <div className={s.App}>
         <Section title="Please leave a feedback" children={Children}>
           <FeedbackOptions
             options={options}
-            onLeaveFeedback={this.onLeaveFeedback}
+            onLeaveFeedback={onLeaveFeedback}
           />
         </Section>
         <Section title="Statistics">
